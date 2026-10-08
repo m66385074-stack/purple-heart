@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>برای تو ملیکا خانوم 💜</title>
+
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    overflow:hidden;
+
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    background:
+    radial-gradient(
+        circle at 50% 45%,
+        #64158d 0%,
+        #310947 28%,
+        #12031d 62%,
+        #020106 100%
+    );
+}
+
+
+/* =========================
+   صحنه
+========================= */
+
+.scene{
+
+    width:100%;
+    height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+
+/* =========================
+   نور مرکزی
+========================= */
+
+.glow{
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    background:#a855f7;
+
+    filter:blur(170px);
+
+    opacity:.22;
+
+    animation:
+    glowMove 6s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove{
+
+    0%{
+        transform:scale(.7);
+        opacity:.12;
+    }
+
+    100%{
+        transform:scale(1.45);
+        opacity:.32;
+    }
+
+}
+
+
+/* =========================
+   ستاره ها
+========================= */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+}
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 8px white,
+    0 0 18px #d8b4fe;
+
+    animation:
+    twinkle var(--time)
+    infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.15;
+
+        transform:scale(.5);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.8);
+    }
+
+}
+
+
+/* =========================
+   پاکت
+========================= */
+
+.envelope-container{
+
+    position:absolute;
+
+    width:330px;
+    height:225px;
+
+    cursor:pointer;
+
+    z-index:50;
+
+    transition:
+    transform .8s ease;
+}
+
+.envelope-container:hover{
+
+    transform:scale(1.04);
+}
+
+
+.envelope{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff7ff,
+        #e4c2ff 45%,
+        #bd7ff0
+    );
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.65),
+
+    0 0 30px
+    rgba(192,132,252,.55),
+
+    inset 0 0 25px
+    rgba(255,255,255,.45);
+
+    overflow:hidden;
+}
+
+
+/* پایین پاکت */
+
+.envelope::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0;
+    height:0;
+
+    border-left:165px solid transparent;
+    border-right:165px solid transparent;
+
+    border-bottom:125px solid #b979e6;
+
+    z-index:4;
+}
+
+
+/* گوشه پاکت */
+
+.envelope::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:0;
+    height:0;
+
+    border-top:115px solid transparent;
+
+    border-left:165px solid #9b5ec5;
+
+    z-index:5;
+}
+
+
+/* =========================
+   در پاکت
+========================= */
+
+.flap{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:0;
+    height:0;
+
+    border-left:165px solid transparent;
+    border-right:165px solid transparent;
+
+    border-top:125px solid #f0dcff;
+
+    transform-origin:top center;
+
+    z-index:10;
+
+    transition:
+    transform 1.1s
+    cubic-bezier(.68,-.55,.27,1.55);
+}
+
+
+/* =========================
+   قلب داخل پاکت
+========================= */
+
+.letter-heart{
+
+    position:absolute;
+
+    width:75px;
+    height:75px;
+
+    left:50%;
+    top:52%;
+
+    transform:
+    translate(-50%,-50%)
+    rotate(-45deg)
+    scale(.1);
+
+    opacity:0;
+
+    z-index:7;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #e9b8ff 25%,
+        #a855f7 65%,
+        #6b21a8
+    );
+
+    box-shadow:
+
+    0 0 15px white,
+    0 0 35px #d8b4fe,
+    0 0 65px #9333ea;
+
+    transition:
+    transform 1.2s
+    cubic-bezier(.17,.67,.3,1.4),
+    opacity .5s;
+}
+
+
+.letter-heart::before,
+.letter-heart::after{
+
+    content:"";
+    position:absolute;
+
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    background:inherit;
+}
+
+.letter-heart::before{
+
+    top:-37px;
+    left:0;
+}
+
+.letter-heart::after{
+
+    top:0;
+    left:37px;
+}
+
+
+/* =========================
+   باز شدن پاکت
+========================= */
+
+.envelope-container.open .flap{
+
+    transform:
+    rotateX(180deg);
+}
+
+
+.envelope-container.open .letter-heart{
+
+    opacity:1;
+
+    transform:
+    translate(-50%,-50%)
+    rotate(-45deg)
+    scale(1);
+}
+
+
+/* محو شدن پاکت */
+
+.envelope-container.open{
+
+    animation:
+    envelopeOut 1.4s forwards;
+
+    animation-delay:2.2s;
+}
+
+@keyframes envelopeOut{
+
+    to{
+
+        opacity:0;
+
+        transform:
+        translateY(100px)
+        scale(.5);
+
+        pointer-events:none;
+    }
+
+}
+
+
+/* =========================
+   انفجار نور
+========================= */
+
+.burst{
+
+    position:absolute;
+
+    left:50%;
+    top:45%;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+    0 0 15px white,
+    0 0 40px #e9b8ff,
+    0 0 80px #a855f7,
+    0 0 140px #7e22ce;
+
+    opacity:0;
+
+    transform:
+    translate(-50%,-50%)
+    scale(.1);
+
+    z-index:22;
+
+    pointer-events:none;
+}
+
+
+.scene.started .burst{
+
+    animation:
+    burstFlash 1.2s
+    ease-out forwards;
+}
+
+
+@keyframes burstFlash{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,-50%)
+        scale(.1);
+    }
+
+    25%{
+
+        opacity:1;
+
+        transform:
+        translate(-50%,-50%)
+        scale(7);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+    }
+
+}
+
+
+/* =========================
+   حلقه انفجار
+========================= */
+
+.burst-ring{
+
+    position:absolute;
+
+    left:50%;
+    top:45%;
+
+    width:100px;
+    height:100px;
+
+    border:
+
+    3px solid #e9b8ff;
+
+    border-radius:50%;
+
+    opacity:0;
+
+    z-index:21;
+
+    pointer-events:none;
+}
+
+
+.scene.started .burst-ring{
+
+    animation:
+    ringExplosion 2s
+    cubic-bezier(.1,.7,.2,1)
+    forwards;
+}
+
+
+@keyframes ringExplosion{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translate(-50%,-50%)
+        scale(.1);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,-50%)
+        scale(7);
+    }
+
+}
+
+
+/* =========================
+   قلب اصلی
+========================= */
+
+.main-heart{
+
+    position:absolute;
+
+    width:440px;
+    height:440px;
+
+    left:50%;
+    top:45%;
+
+    transform:
+    translate(-50%,-50%)
+    scale(0);
+
+    opacity:0;
+
+    z-index:30;
+
+    filter:
+
+    drop-shadow(0 0 8px white)
+    drop-shadow(0 0 25px #e9b8ff)
+    drop-shadow(0 0 55px #a855f7)
+    drop-shadow(0 0 110px #7e22ce);
+
+    transition:
+
+    transform 1.4s
+    cubic-bezier(.17,.67,.3,1.25),
+
+    opacity .7s;
+}
+
+
+/* SVG */
+
+.main-heart svg{
+
+    width:100%;
+    height:100%;
+
+    overflow:visible;
+}
+
+
+/* قلب ظاهر شود */
+
+.scene.started .main-heart{
+
+    opacity:1;
+
+    transform:
+    translate(-50%,-50%)
+    scale(1);
+
+    animation:
+    heartBeat 1.25s
+    infinite ease-in-out;
+}
+
+
+/* تپش */
+
+@keyframes heartBeat{
+
+    0%,
+    100%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+    }
+
+    50%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1.055);
+    }
+
+}
+
+
+/* =========================
+   برق روی قلب
+========================= */
+
+.heart-shine{
+
+    position:absolute;
+
+    width:100px;
+    height:440px;
+
+    top:0;
+
+    left:-180px;
+
+    background:
+    linear-gradient(
+        100deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+    transform:rotate(18deg);
+
+    filter:blur(8px);
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+
+.scene.started .heart-shine{
+
+    animation:
+    shineMove 3.5s
+    infinite;
+}
+
+@keyframes shineMove{
+
+    0%{
+
+        left:-180px;
+
+        opacity:0;
+    }
+
+    20%{
+
+        opacity:.85;
+    }
+
+    45%{
+
+        left:500px;
+
+        opacity:0;
+    }
+
+    100%{
+
+        left:500px;
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   پرتوهای نور
+========================= */
+
+.ray{position:absolute;
+
+    left:50%;
+    top:45%;
+
+    width:2px;
+    height:320px;
+
+    background:
+    linear-gradient(
+        transparent,
+        #e9b8ff,
+        transparent
+    );
+
+    opacity:0;
+
+    z-index:18;
+
+    transform-origin:center bottom;
+}
+
+
+.scene.started .ray{
+
+    animation:
+    raySpin 3s
+    infinite linear;
+}
+
+
+.ray:nth-child(1){
+    transform:rotate(0deg);
+}
+
+.ray:nth-child(2){
+    transform:rotate(30deg);
+}
+
+.ray:nth-child(3){
+    transform:rotate(60deg);
+}
+
+.ray:nth-child(4){
+    transform:rotate(90deg);
+}
+
+.ray:nth-child(5){
+    transform:rotate(120deg);
+}
+
+.ray:nth-child(6){
+    transform:rotate(150deg);
+}
+
+@keyframes raySpin{
+
+    0%{
+        opacity:0;
+    }
+
+    25%{
+        opacity:.4;
+    }
+
+    50%{
+        opacity:.1;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   حلقه های نور
+========================= */
+
+.energy{
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border:
+    2px solid #d8b4fe;
+
+    border-radius:50%;
+
+    opacity:0;
+
+    z-index:15;
+
+    box-shadow:
+
+    0 0 20px #a855f7,
+    inset 0 0 20px #a855f7;
+}
+
+
+.scene.started .energy{
+
+    animation:
+    energyPulse 2.5s
+    infinite ease-out;
+}
+
+
+.energy:nth-of-type(2){
+
+    width:480px;
+    height:480px;
+
+    animation-delay:.6s;
+}
+
+
+.energy:nth-of-type(3){
+
+    width:620px;
+    height:620px;
+
+    animation-delay:1.2s;
+}
+
+
+@keyframes energyPulse{
+
+    0%{
+
+        transform:scale(.5);
+
+        opacity:.75;
+    }
+
+    100%{
+
+        transform:scale(1.35);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   ذرات نور
+========================= */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:8;
+}
+
+
+.particle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+    0 0 8px white,
+    0 0 18px #d8b4fe,
+    0 0 35px #9333ea;
+
+    opacity:0;
+}
+
+
+.scene.started .particle{
+
+    animation:
+    particleUp
+    var(--duration)
+    linear
+    infinite;
+
+    animation-delay:
+    var(--delay);
+}
+
+
+@keyframes particleUp{
+
+    0%{
+
+        transform:
+        translateY(110vh)
+        scale(.2);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    85%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-20vh)
+        scale(1.6);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   جرقه ها
+========================= */
+
+.spark{
+
+    position:absolute;
+
+    left:50%;
+    top:45%;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 8px white,
+    0 0 20px #d8b4fe,
+    0 0 35px #a855f7;
+
+    opacity:0;
+
+    z-index:35;
+}
+
+
+.scene.started .spark{
+
+    animation:
+    sparkFly
+    var(--duration)
+    cubic-bezier(.15,.8,.25,1)
+    forwards;
+
+    animation-delay:
+    var(--delay);
+}
+
+
+@keyframes sparkFly{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translate(-50%,-50%)
+        scale(.5);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(
+            var(--x),
+            var(--y)
+        )
+        scale(.1);
+    }
+
+}
+
+
+/* =========================
+   قلب های کوچک
+========================= */
+
+.mini-heart{
+
+    position:absolute;
+
+    color:#f0d9ff;
+
+    opacity:0;
+
+    z-index:20;
+
+    text-shadow:
+
+    0 0 10px white,
+    0 0 20px #c084fc,
+    0 0 40px #9333ea;
+}
+
+
+.scene.started .mini-heart{
+
+    animation:
+    miniFloat 5s
+    infinite ease-in-out;
+
+    animation-delay:
+    var(--delay);
+}
+
+
+@keyframes miniFloat{
+
+    0%{
+
+        transform:
+        translateY(100px)
+        scale(.3)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    25%{
+        opacity:1;
+    }
+
+    75%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-400px)
+        scale(1.4)
+        rotate(180deg);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   نوشته
+========================= */
+
+.message{
+
+    position:absolute;
+
+    top:calc(45% + 270px);
+
+    color:white;
+
+    font-size:27px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    z-index:60;
+    text-shadow:
+
+    0 0 8px white,
+    0 0 20px #e9b8ff,
+    0 0 40px #a855f7,
+    0 0 75px #7e22ce;
+}
+
+
+.scene.started .message{
+
+    animation:
+    messageIn 1.8s
+    forwards;
+
+    animation-delay:2s;
+}
+
+
+@keyframes messageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px)
+        scale(.75);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+    }
+
+}
+
+
+/* =========================
+   راهنما
+========================= */
+
+.hint{
+
+    position:absolute;
+
+    bottom:35px;
+
+    color:#e9d5ff;
+
+    font-size:14px;
+
+    opacity:.8;
+
+    z-index:60;
+
+    animation:
+    hintPulse 2s infinite;
+}
+
+
+@keyframes hintPulse{
+
+    0%,
+    100%{
+        opacity:.3;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+}
+
+
+/* =========================
+   موبایل
+========================= */
+
+@media(max-width:600px){
+
+    .envelope-container{
+
+        width:280px;
+        height:190px;
+    }
+
+    .flap{
+
+        border-left-width:140px;
+        border-right-width:140px;
+        border-top-width:105px;
+    }
+
+    .envelope::before{
+
+        border-left-width:140px;
+        border-right-width:140px;
+        border-bottom-width:105px;
+    }
+
+    .envelope::after{
+
+        border-left-width:140px;
+    }
+
+    .main-heart{
+
+        width:350px;
+        height:350px;
+
+        top:43%;
+    }
+
+    .message{
+
+        top:calc(43% + 225px);
+
+        font-size:19px;
+    }
+
+    .energy{
+
+        width:290px;
+        height:290px;
+    }
+
+    .energy:nth-of-type(2){
+
+        width:400px;
+        height:400px;
+    }
+
+    .energy:nth-of-type(3){
+
+        width:520px;
+        height:520px;
+    }
+
+}
+
+
+/* خیلی کوچک */
+
+@media(max-width:380px){
+
+    .main-heart{
+
+        width:300px;
+        height:300px;
+    }
+
+    .message{
+
+        font-size:17px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div
+class="scene"
+id="scene"
+>
+
+
+<!-- نور -->
+
+<div class="glow"></div>
+
+
+<!-- ستاره ها -->
+
+<div
+class="stars"
+id="stars"
+></div>
+
+
+<!-- پرتوها -->
+
+<div class="ray"></div>
+<div class="ray"></div>
+<div class="ray"></div>
+<div class="ray"></div>
+<div class="ray"></div>
+<div class="ray"></div>
+
+
+<!-- حلقه های نور -->
+
+<div class="energy"></div>
+<div class="energy"></div>
+<div class="energy"></div>
+
+
+<!-- انفجار -->
+
+<div class="burst"></div>
+
+<div class="burst-ring"></div>
+
+
+<!-- قلب اصلی -->
+
+<div class="main-heart">
+
+
+<svg
+viewBox="0 0 500 500"
+>
+
+
+<defs>
+
+
+<!-- گرادیان اصلی -->
+
+<linearGradient
+id="heartGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%"
+>
+
+<stop
+offset="0%"
+stop-color="#ffffff"
+/>
+
+<stop
+offset="20%"
+stop-color="#f2caff"
+/>
+
+<stop
+offset="48%"
+stop-color="#c084fc"
+/>
+
+<stop
+offset="75%"
+stop-color="#9333ea"
+/>
+
+<stop
+offset="100%"
+stop-color="#5b1680"
+/>
+
+</linearGradient>
+
+
+<!-- نور داخلی -->
+
+<radialGradient
+id="heartGlow"
+cx="32%"
+cy="23%"
+>
+
+<stop
+offset="0%"
+stop-color="#ffffff"
+stop-opacity=".95"
+/>
+
+<stop
+offset="35%"
+stop-color="#f0c8ff"
+stop-opacity=".6"
+/>
+
+<stop
+offset="100%"
+stop-color="#7e22ce"
+stop-opacity="0"
+/>
+
+</radialGradient>
+
+
+<!-- هاله -->
+
+<filter
+id="heartBlur"
+x="-50%"
+y="-50%"
+width="200%"
+height="200%"
+>
+
+<feGaussianBlur
+stdDeviation="10"
+/>
+
+</filter>
+
+
+</defs>
+
+
+<!-- هاله پشت قلب -->
+
+<path
+
+d="
+M250 440
+
+C230 415 65 300 65 175
+
+C65 80 180 45 250 135
+
+C320 45 435 80 435 175
+
+C435 300 270 415 250 440
+
+Z
+"
+
+fill="#a855f7"
+
+opacity=".45"
+
+filter="url(#heartBlur)"
+/>
+
+
+<!-- قلب -->
+
+<path
+
+d="
+M250 440
+
+C230 415 65 300 65 175
+
+C65 80 180 45 250 135
+
+C320 45 435 80 435 175
+
+C435 300 270 415 250 440
+
+Z
+"
+
+fill="url(#heartGradient)"
+/>
+
+
+<!-- نور داخل قلب -->
+
+<path
+
+d="
+M250 425
+
+C230 400 85 295 85 180
+
+C85 105 170 75 230 145
+
+C245 162 250 180 250 180
+
+C250 180 255 162 270 145
+
+C330 75 415 105 415 180
+
+C415 295 270 400 250 425
+
+Z
+"
+
+fill="url(#heartGlow)"
+/>
+
+
+<!-- برق روی قلب -->
+
+<path
+
+d="
+M125 155
+
+C145 105 195 100 220 135
+
+C180 128 150 150 135 185
+
+C125 205 115 185 125 155
+
+Z
+"
+
+fill="white"
+
+opacity=".78"
+/>
+
+
+</svg>
+
+
+<!-- برق متحرک -->
+
+<div class="heart-shine"></div>
+
+
+</div>
+
+
+<!-- ذرات -->
+
+<div
+class="particles"
+id="particles"
+></div>
+
+
+<!-- جرقه ها -->
+ <div
+id="sparks"
+></div>
+
+
+<!-- قلب های کوچک -->
+
+<div
+id="miniHearts"
+></div>
+
+
+<!-- پاکت -->
+
+<div
+class="envelope-container"
+id="envelope"
+onclick="openEnvelope()"
+>
+
+<div class="envelope"></div>
+
+<div class="flap"></div>
+
+<div class="letter-heart"></div>
+
+</div>
+
+
+<!-- نوشته -->
+
+<div class="message">
+
+برای تو ملیکا خانوم 💜
+
+</div>
+
+
+<!-- راهنما -->
+
+<div class="hint">
+
+برای باز کردن کلیک کن ✨
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   باز کردن پاکت
+========================= */
+
+function openEnvelope(){
+
+    const envelope =
+    document.getElementById("envelope");
+
+    const scene =
+    document.getElementById("scene");
+
+
+    if(
+        envelope.classList.contains("open")
+    ){
+
+        return;
+
+    }
+
+
+    envelope.classList.add("open");
+
+
+    setTimeout(function(){
+
+        scene.classList.add("started");
+
+    },2300);
+
+}
+
+
+/* =========================
+   ستاره ها
+========================= */
+
+const stars =
+document.getElementById("stars");
+
+
+for(
+    let i=0;
+    i<120;
+    i++
+){
+
+    const star =
+    document.createElement("div");
+
+
+    star.className =
+    "star";
+
+
+    star.style.left =
+    Math.random()*100+"%";
+
+
+    star.style.top =
+    Math.random()*100+"%";
+
+
+    star.style.setProperty(
+        "--time",
+        (1+Math.random()*3)+"s"
+    );
+
+
+    const size =
+    1+Math.random()*3;
+
+
+    star.style.width =
+    size+"px";
+
+
+    star.style.height =
+    size+"px";
+
+
+    stars.appendChild(star);
+
+}
+
+
+/* =========================
+   ذرات نور
+========================= */
+
+const particles =
+document.getElementById("particles");
+
+
+for(
+    let i=0;
+    i<150;
+    i++
+){
+
+    const p =
+    document.createElement("div");
+
+
+    p.className =
+    "particle";
+
+
+    p.style.left =
+    Math.random()*100+"%";
+
+
+    p.style.setProperty(
+        "--duration",
+        (4+Math.random()*7)+"s"
+    );
+
+
+    p.style.setProperty(
+        "--delay",
+        Math.random()*7+"s"
+    );
+
+
+    const size =
+    2+Math.random()*5;
+
+
+    p.style.width =
+    size+"px";
+
+
+    p.style.height =
+    size+"px";
+
+
+    particles.appendChild(p);
+
+}
+
+
+/* =========================
+   جرقه های انفجار
+========================= */
+
+const sparks =
+document.getElementById("sparks");
+
+
+for(
+    let i=0;
+    i<70;
+    i++
+){
+
+    const spark =
+    document.createElement("div");
+
+
+    spark.className =
+    "spark";
+
+
+    const angle =
+    Math.random()*Math.PI*2;
+
+
+    const distance =
+    100+Math.random()*420;
+
+
+    const x =
+    Math.cos(angle)*distance;
+
+
+    const y =
+    Math.sin(angle)*distance;
+
+
+    spark.style.setProperty(
+        "--x",
+        x+"px"
+    );
+
+
+    spark.style.setProperty(
+        "--y",
+        y+"px"
+    );
+
+
+    spark.style.setProperty(
+        "--duration",
+        (1.2+Math.random()*1.5)+"s"
+    );
+
+
+    spark.style.setProperty(
+        "--delay",
+        (Math.random()*.5)+"s"
+    );
+
+
+    const size =
+    2+Math.random()*5;
+
+
+    spark.style.width =
+    size+"px";
+
+
+    spark.style.height =
+    size+"px";
+
+
+    sparks.appendChild(spark);
+
+}
+
+
+/* =========================
+   قلب های کوچک
+========================= */
+
+const miniContainer =
+document.getElementById("miniHearts");
+
+
+for(
+    let i=45;
+    i>0;
+    i--
+){
+
+    const heart =
+    document.createElement("div");
+
+
+    heart.className =
+    "mini-heart";
+
+
+    heart.innerHTML =
+    Math.random()>.5
+    ? "♥"
+    : "♡";
+
+
+    heart.style.left =
+    Math.random()*100+"%";
+
+
+    heart.style.top =
+    (45+Math.random()*55)+"%";
+
+
+    heart.style.setProperty(
+        "--delay",
+        Math.random()*5+"s"
+    );
+
+
+    heart.style.fontSize =
+    (10+Math.random()*30)+"px";
+
+
+    miniContainer.appendChild(heart);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+
